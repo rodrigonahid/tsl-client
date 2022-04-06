@@ -9,7 +9,7 @@ import {
   UserPostedAt,
 } from "./style";
 
-export default function PostCard({ title, content, createdAt, author }) {
+export default function PostCard({ content, createdAt, author }) {
   return (
     <CardWrapper>
       <CardProfile></CardProfile>

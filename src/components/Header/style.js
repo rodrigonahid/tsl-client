@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { Container } from "../../styles/global";
 
+export const WallAppTitle = styled.h1`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: ${({ theme }) => theme.colors.white};
+`;
+
 export const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.blue};
   height: 66px;

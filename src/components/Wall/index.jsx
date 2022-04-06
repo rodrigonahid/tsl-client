@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react/cjs/react.development";
 import { api } from "../../services/axios";
-import { Container } from "../../styles/global";
+import { Container, ErrorMessage } from "../../styles/global";
 import formatData from "../../utils/formatData";
 import PostCard from "../PostCard";
 import { WallWrapper } from "./style";
@@ -8,6 +8,7 @@ import { WallWrapper } from "./style";
 export default function Wall() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [isError, setIsError] = useState("");
 
   useEffect(async () => {
     try {
@@ -15,7 +16,7 @@ export default function Wall() {
       setData(data);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      setIsError(err.message);
     }
   }, []);
 
@@ -26,10 +27,11 @@ export default function Wall() {
           data.map((item) => (
             <PostCard
               content={item.content}
-              author={item.author}
+              author={item.author_username}
               createdAt={formatData(item.created_at)}
             />
           ))}
+        {isError && <ErrorMessage>{isError}</ErrorMessage>}
       </WallWrapper>
     </Container>
   );

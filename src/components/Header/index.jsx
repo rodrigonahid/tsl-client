@@ -7,6 +7,7 @@ import {
   HeaderRight,
   HeaderWrapper,
   LoginButton,
+  WallAppTitle,
 } from "./style";
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
       <HeaderContainer>
         <HeaderLeft>
           <Link to="/">
-            <h1>Wall App</h1>
+            <WallAppTitle>Wall App</WallAppTitle>
           </Link>
         </HeaderLeft>
         <HeaderCenter></HeaderCenter>

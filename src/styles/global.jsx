@@ -43,3 +43,11 @@ export const Container = styled.div`
     max-width: 480px;
   }
 `;
+
+export const ErrorMessage = styled.p`
+  color: ${({ theme }) => theme.colors.error};
+  padding: 36px 0;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+`;
