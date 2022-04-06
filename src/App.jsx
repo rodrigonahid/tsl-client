@@ -28,10 +28,12 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/" element={<Wall />} />
-            {!isAuthed && <Route path="/login" element={<Login />} />}
-            {!isAuthed && <Route path="/register" element={<Register />} />}
             {!isAuthed && (
-              <Route path="/register/success" element={<UserCreated />} />
+              <>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/register/success" element={<UserCreated />} />
+              </>
             )}
           </Routes>
         </Router>

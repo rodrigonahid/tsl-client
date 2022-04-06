@@ -19,9 +19,6 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");
-    console.log("username", username);
-    console.log("email", email);
-    console.log("password", password);
 
     if (!username || !email || !password || !confirmPassword) {
       return setError("Fill all fields of the form");
