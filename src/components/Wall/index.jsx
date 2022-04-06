@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useContext, useEffect, useState } from "react/cjs/react.development";
+import { AuthContext } from "../../contexts/AuthContext";
 import { api } from "../../services/axios";
 import { Container, ErrorMessage } from "../../styles/global";
 import formatData from "../../utils/formatData";
 import PostCard from "../PostCard";
+import PostForm from "../PostForm";
 import { WallWrapper } from "./style";
 
 export default function Wall() {
+  const { isAuthed } = useContext(AuthContext);
+
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [isError, setIsError] = useState("");
@@ -22,6 +26,7 @@ export default function Wall() {
 
   return (
     <Container>
+      {isAuthed && <PostForm />}
       <WallWrapper>
         {!isLoading &&
           data.map((item) => (

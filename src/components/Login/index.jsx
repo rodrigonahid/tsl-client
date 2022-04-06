@@ -25,7 +25,7 @@ export default function Login() {
     api
       .post("/users/token/", { email, password })
       .then((res) => {
-        localStorage.setItem("Authorization", res.data.refresh);
+        localStorage.setItem("Authorization", res.data.access);
         setIsAuthed(true);
         navigate("/");
       })
