@@ -26,6 +26,7 @@ export default function Wall() {
         {!isLoading &&
           data.map((item) => (
             <PostCard
+              key={item.id}
               content={item.content}
               author={item.author_username}
               createdAt={formatData(item.created_at)}

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react/cjs/react.development";
+import { AuthContext } from "../../contexts/AuthContext";
 import { api } from "../../services/axios";
 import { FormButton, StyledInput } from "../../styles/button";
 import { ErrorMessage } from "../../styles/global";
@@ -8,6 +10,7 @@ import { FormContainer, FormWrapper, LoginForm, Already } from "./style";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { isAuthed, setIsAuthed } = useContext(AuthContext);
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -22,11 +25,11 @@ export default function Login() {
     api
       .post("/users/token/", { email, password })
       .then((res) => {
-        localStorage.setItem("Authorization", res.data.token);
-        console.log(res);
+        localStorage.setItem("Authorization", res.data.refresh);
+        setIsAuthed(true);
         navigate("/");
       })
-      .catch((err) => setError("Invalid user and/or password"));
+      .catch(() => setError("Invalid user and/or password"));
   };
 
   return (

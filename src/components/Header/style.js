@@ -25,7 +25,7 @@ export const HeaderContainer = styled(Container)`
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 export const HeaderLeft = styled.div`
@@ -33,21 +33,6 @@ export const HeaderLeft = styled.div`
   align-items: center;
   img {
     cursor: pointer;
-  }
-`;
-
-export const HeaderCenter = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  li {
-    display: inline-block;
-    margin: 0 16px;
-  }
-  ul {
-    display: flex;
-    align-items; center;
-    height: 100%;
   }
 `;
 
@@ -73,6 +58,8 @@ export const HeaderRight = styled.div`
 `;
 
 export const LoginButton = styled.button`
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,5 +84,11 @@ export const LoginButton = styled.button`
   &:hover {
     box-shadow: none;
     transform: none;
+  }
+  svg {
+    position: absolute;
+    right: 16px;
+    top: 3px;
+    transform: translateY(100%);
   }
 `;
