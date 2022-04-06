@@ -20,38 +20,35 @@ export default function Login() {
       return setError("Preencha o formulário");
     }
     api
-      .post("/login", { email, password })
+      .post("/users/token/", { email, password })
       .then((res) => {
-        if (res.problem) {
-          return setError("Usuário e/ou senha inválidos");
-        }
-        localStorage.setItem("auth-token", res.data.token);
-        loginUser(res.data.token, res.data.user);
+        localStorage.setItem("Authorization", res.data.token);
+        console.log(res);
         navigate("/");
       })
-      .catch((err) => setError(err));
+      .catch((err) => setError("Invalid user and/or password"));
   };
 
   return (
     <FormContainer>
       <FormWrapper>
-        <h1>Entre na sua conta</h1>
+        <h1>Log into your account</h1>
         <LoginForm>
           <StyledInput
             onChange={(e) => setEmail(e.target.value)}
-            label="E-mail"
+            label="Email"
             type="text"
           />
           <StyledInput
             onChange={(e) => setPassword(e.target.value)}
-            label="Senha"
+            label="Password"
             type="text"
           />
-          <FormButton children="Entrar" onClick={handleLogin} />
+          <FormButton children="Sign In" onClick={handleLogin} />
           {error && <ErrorMessage>{error}</ErrorMessage>}
           <Already>
-            <span>Não possui uma conta?</span>
-            <Link to="/register">Cadastre-se</Link>
+            <span>Don't have an account?</span>
+            <Link to="/register">Sign Up</Link>
           </Already>
         </LoginForm>
       </FormWrapper>
