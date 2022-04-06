@@ -6,7 +6,7 @@ const theme = {
     white: "#FAFAFA",
     gray: "#777777",
     navyBlue: "#1B3953",
-    blue: "#1998F9",
+    blue: "#265073",
     error: "#F83540",
   },
   animation: {

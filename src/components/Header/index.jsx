@@ -35,10 +35,10 @@ export default function Header() {
           )} */}
           <>
             <Link to="/login">
-              <span>Entrar</span>
+              <span>Sign In</span>
             </Link>
             <Link to="/register">
-              <LoginButton>Registrar</LoginButton>
+              <LoginButton>Sign Up</LoginButton>
             </Link>
           </>
         </HeaderRight>
