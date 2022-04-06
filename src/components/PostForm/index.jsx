@@ -9,13 +9,16 @@ import {
   PostTextArea,
 } from "./style";
 
-export default function PostForm() {
+export default function PostForm({ setData, data }) {
   const [content, setContent] = useState("");
 
   const post = async (e) => {
     e.preventDefault();
     try {
-      const data = await api.post("/posts/", { content: content });
+      const res = await api.post("/posts/", { content: content });
+
+      setData([res.data, ...data]);
+      console.log(data);
     } catch (err) {
       console.log(err);
     }

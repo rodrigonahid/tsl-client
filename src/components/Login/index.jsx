@@ -45,7 +45,7 @@ export default function Login() {
           <StyledInput
             onChange={(e) => setPassword(e.target.value)}
             label="Password"
-            type="text"
+            type="password"
           />
           <FormButton children="Sign In" onClick={handleLogin} />
           {error && <ErrorMessage>{error}</ErrorMessage>}

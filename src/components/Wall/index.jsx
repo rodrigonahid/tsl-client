@@ -26,7 +26,7 @@ export default function Wall() {
 
   return (
     <Container>
-      {isAuthed && <PostForm />}
+      {isAuthed && <PostForm setData={setData} data={data} />}
       <WallWrapper>
         {!isLoading &&
           data.map((item) => (

@@ -4,6 +4,8 @@ import { useEffect } from "react/cjs/react.development";
 
 import Header from "./components/Header";
 import Login from "./components/Login";
+import Register from "./components/Register";
+import UserCreated from "./components/UserCreated";
 import Wall from "./components/Wall";
 import { AuthProvider } from "./contexts/AuthContext";
 import { GlobalStyle } from "./styles/global";
@@ -25,8 +27,12 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            <Route path="/" element={<Wall />} />
+            <Route exact path="/" element={<Wall />} />
             {!isAuthed && <Route path="/login" element={<Login />} />}
+            {!isAuthed && <Route path="/register" element={<Register />} />}
+            {!isAuthed && (
+              <Route path="/register/success" element={<UserCreated />} />
+            )}
           </Routes>
         </Router>
       </AuthProvider>

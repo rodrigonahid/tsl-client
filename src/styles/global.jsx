@@ -46,8 +46,7 @@ export const Container = styled.div`
 
 export const ErrorMessage = styled.p`
   color: ${({ theme }) => theme.colors.error};
-  padding: 36px 0;
-  font-size: 24px;
+  padding: 8px 0 16px;
+  font-size: 16px;
   font-weight: 500;
-  text-align: center;
 `;
