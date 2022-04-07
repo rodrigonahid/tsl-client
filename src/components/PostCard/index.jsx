@@ -1,7 +1,6 @@
 import {
   CardBottom,
   CardContent,
-  CardProfile,
   CardTop,
   CardWrapper,
   UserName,
@@ -12,7 +11,6 @@ import {
 export default function PostCard({ content, createdAt, author }) {
   return (
     <CardWrapper>
-      <CardProfile></CardProfile>
       <CardTop>
         <CardContent>
           <UserName>{author}</UserName>

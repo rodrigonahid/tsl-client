@@ -17,8 +17,6 @@ export const CardContent = styled.div`
   align-items: center;
 `;
 
-export const CardProfile = styled.div``;
-
 export const UserName = styled.h3`
   font-style: normal;
   font-weight: 600;
