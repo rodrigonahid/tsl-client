@@ -46,3 +46,9 @@ export const Already = styled.div`
     margin-left: 12px;
   }
 `;
+
+export const LoadingWrapper = styled.div`
+  height: 20px;
+  width: 20px;
+  margin-left: 14px;
+`;

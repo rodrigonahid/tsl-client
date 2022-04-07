@@ -1,12 +1,16 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
+import { useContext } from "react/cjs/react.development";
+import { AuthContext } from "../../contexts/AuthContext";
 import { api } from "../../services/axios";
 
 import { Container, ErrorMessage } from "../../styles/global";
-import { VerifyWrapper } from "./style";
+import { Loading } from "../../styles/loading";
+import { LoadingWrapper, VerifyWrapper } from "./style";
 
 export default function VerifyAccount() {
   const navigate = useNavigate();
+  const { setIsAuthed } = useContext(AuthContext);
 
   const [searchParams] = useSearchParams();
   const [response, setResponse] = useState("");
@@ -17,13 +21,17 @@ export default function VerifyAccount() {
     const query = searchParams.get("token");
     try {
       const { data } = await api.get("/users/verify-email/?token=" + query);
+      console.log(data);
       setResponse(data.message);
-      localStorage.setItem("Authorization", query);
       setIsLoading(false);
+      setIsAuthed(true);
+
       setTimeout(() => {
+        localStorage.setItem("Authorization", query);
         navigate("/");
       }, 3000);
     } catch (err) {
+      console.log(err);
       setError("Invalid token");
       setIsLoading(false);
     }
@@ -35,12 +43,18 @@ export default function VerifyAccount() {
           <>
             <h2>Verifying your account</h2>
             <p>Please, wait a moment</p>
+            <LoadingWrapper>
+              <Loading dark />
+            </LoadingWrapper>
           </>
         )}
         {response && (
           <>
             <h2>{response}</h2>
             <p>Redirecting</p>
+            <LoadingWrapper>
+              <Loading dark />
+            </LoadingWrapper>
           </>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}

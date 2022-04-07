@@ -12,3 +12,9 @@ export const VerifyWrapper = styled.div`
   margin: 48px 0;
   ${({ theme }) => theme.animation.pop}
 `;
+
+export const LoadingWrapper = styled.div`
+  height: 40px;
+  width: 40px;
+  margin-top: 24px;
+`;
