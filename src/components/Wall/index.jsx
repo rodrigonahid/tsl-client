@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from "react/cjs/react.development";
 import { AuthContext } from "../../contexts/AuthContext";
 import { api } from "../../services/axios";
 import { Container, ErrorMessage } from "../../styles/global";
+import { Loading } from "../../styles/loading";
 import formatData from "../../utils/formatData";
 import PostCard from "../PostCard";
 import PostForm from "../PostForm";
-import { WallWrapper } from "./style";
+import { LoadingWrapper, WallWrapper } from "./style";
 
 export default function Wall() {
   const { isAuthed } = useContext(AuthContext);
@@ -20,6 +21,7 @@ export default function Wall() {
       setData(data);
       setIsLoading(false);
     } catch (err) {
+      setIsLoading(false);
       setIsError("Your token has expired, please log in again");
     }
   }, []);
@@ -28,6 +30,11 @@ export default function Wall() {
     <Container>
       {isAuthed && <PostForm setData={setData} data={data} />}
       <WallWrapper>
+        {isLoading && (
+          <LoadingWrapper>
+            <Loading />
+          </LoadingWrapper>
+        )}
         {!isLoading &&
           data.map((item) => (
             <PostCard

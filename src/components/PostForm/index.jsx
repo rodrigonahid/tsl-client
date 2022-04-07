@@ -29,7 +29,6 @@ export default function PostForm({ setData, data }) {
       setIsLoading(false);
       setContent("");
     } catch (err) {
-      console.log(err);
       setError("Your token has expired, please log in again");
       setIsLoading(false);
     }

@@ -21,7 +21,6 @@ export default function VerifyAccount() {
     const query = searchParams.get("token");
     try {
       const { data } = await api.get("/users/verify-email/?token=" + query);
-      console.log(data);
       setResponse(data.message);
       setIsLoading(false);
       setIsAuthed(true);
@@ -31,7 +30,6 @@ export default function VerifyAccount() {
         navigate("/");
       }, 3000);
     } catch (err) {
-      console.log(err);
       setError("Invalid token, please log in again");
       setIsLoading(false);
     }
