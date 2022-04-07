@@ -3,8 +3,7 @@ import { Container } from "../../styles/global";
 
 export const LoginContainer = styled(Container)`
   max-width: 600px;
-  padding: 8vh 0;
-  margin: 0 10px;
+  padding: 8vh 10px;
 `;
 
 export const LoginWrapper = styled.div`

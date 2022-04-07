@@ -3,8 +3,7 @@ import { Container } from "../../styles/global";
 
 export const FormContainer = styled(Container)`
   max-width: 600px;
-  padding: 8vh 0;
-  margin: 0 10px;
+  padding: 8vh 10px;
 `;
 
 export const FormWrapper = styled.div`

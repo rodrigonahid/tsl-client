@@ -7,7 +7,8 @@ export default function UserCreated() {
       <LoginWrapper>
         <UserCreatedTitle>User successfully created</UserCreatedTitle>
         <UserCreatedContent>
-          Please, check your email for the verification link
+          Please, check your email for the verification link. Also check the
+          spam box.
         </UserCreatedContent>
       </LoginWrapper>
     </LoginContainer>

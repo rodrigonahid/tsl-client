@@ -5,6 +5,7 @@ export const CardWrapper = styled.div`
   border-radius: 8px;
   margin: 18px 0;
   padding: 18px;
+  ${({ theme }) => theme.animation.pop}
 `;
 
 export const CardTop = styled.div``;

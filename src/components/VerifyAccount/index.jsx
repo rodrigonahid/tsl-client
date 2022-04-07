@@ -6,7 +6,7 @@ import { api } from "../../services/axios";
 
 import { Container, ErrorMessage } from "../../styles/global";
 import { Loading } from "../../styles/loading";
-import { LoadingWrapper, VerifyWrapper } from "./style";
+import { LoadingWrapper, Verifying, VerifyWrapper } from "./style";
 
 export default function VerifyAccount() {
   const navigate = useNavigate();
@@ -38,22 +38,22 @@ export default function VerifyAccount() {
     <Container>
       <VerifyWrapper>
         {isLoading && (
-          <>
+          <Verifying>
             <h2>Verifying your account</h2>
             <p>Please, wait a moment</p>
             <LoadingWrapper>
               <Loading dark />
             </LoadingWrapper>
-          </>
+          </Verifying>
         )}
         {response && (
-          <>
+          <Verifying>
             <h2>{response}</h2>
             <p>Redirecting</p>
             <LoadingWrapper>
               <Loading dark />
             </LoadingWrapper>
-          </>
+          </Verifying>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
       </VerifyWrapper>

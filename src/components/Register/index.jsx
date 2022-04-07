@@ -47,7 +47,8 @@ export default function Register() {
       await navigate("success", { replace: true });
     } catch (err) {
       setIsLoading(false);
-      return setError("Invalid user and/or email");
+      console.log(err);
+      return setError("Invalid user and/or email, or is already taken");
     }
   };
 

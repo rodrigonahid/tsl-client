@@ -18,3 +18,13 @@ export const LoadingWrapper = styled.div`
   width: 40px;
   margin-top: 24px;
 `;
+
+export const Verifying = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 24px;
+  }
+`;
