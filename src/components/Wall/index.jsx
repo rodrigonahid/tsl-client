@@ -6,7 +6,7 @@ import { Loading } from "../../styles/loading";
 import formatData from "../../utils/formatData";
 import PostCard from "../PostCard";
 import PostForm from "../PostForm";
-import { LoadingWrapper, WallWrapper } from "./style";
+import { LoadingWrapper, NoPost, WallWrapper } from "./style";
 
 export default function Wall() {
   const { isAuthed } = useContext(AuthContext);
@@ -44,6 +44,11 @@ export default function Wall() {
               createdAt={formatData(item.created_at)}
             />
           ))}
+        {data.length === 0 && (
+          <NoPost>
+            <h2>There's no post yet, be the first one to publish</h2>
+          </NoPost>
+        )}
         {isError && <ErrorMessage>{isError}</ErrorMessage>}
       </WallWrapper>
     </Container>
