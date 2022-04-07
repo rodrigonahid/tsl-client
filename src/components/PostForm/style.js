@@ -50,3 +50,25 @@ export const LatestPosts = styled.div`
     color: ${({ theme }) => theme.colors.gray};
   }
 `;
+
+export const ErrorWrapper = styled.div`
+  flex: 1;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const ButtonWrapper = styled.div`
+  flex: 1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const LoadingWrapper = styled.span`
+  width: 20px;
+  height: 20px;
+  margin-left: 14px;
+`;

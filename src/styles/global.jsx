@@ -27,6 +27,11 @@ export const GlobalStyle = createGlobalStyle`
       transform: scale(1, 1);
     }
   }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 `;
 
 export const Container = styled.div`
@@ -46,7 +51,7 @@ export const Container = styled.div`
 
 export const ErrorMessage = styled.p`
   color: ${({ theme }) => theme.colors.error};
-  padding: 8px 0 16px;
+  padding: 8px 0;
   font-size: 16px;
   font-weight: 500;
 `;
