@@ -11,6 +11,9 @@ export const WallAppTitle = styled.h1`
   text-align: center;
   letter-spacing: 0.04em;
   color: ${({ theme }) => theme.colors.white};
+  @media screen and (max-width: 900px) {
+    font-size: 24px;
+  }
 `;
 
 export const HeaderWrapper = styled.header`
@@ -58,13 +61,11 @@ export const HeaderRight = styled.div`
 `;
 
 export const LoginButton = styled.button`
-  position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
   height: 36px;
-  width: 200px;
+  width: 180px;
   border: none;
   border-radius: 36px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -81,14 +82,23 @@ export const LoginButton = styled.button`
   color: #151519;
   transition: 0.2s;
   transform: translate3d(-1px, -1px, 0px);
+  @media screen and (max-width: 600px) {
+    width: 120px;
+  }
   &:hover {
     box-shadow: none;
     transform: none;
   }
-  svg {
-    position: absolute;
-    right: 16px;
-    top: 3px;
-    transform: translateY(100%);
-  }
+  ${({ logout }) =>
+    logout &&
+    `
+    display: flex;
+    svg{
+      margin-left: 8px;
+    }
+    `}
+`;
+
+export const LoginLink = styled.div`
+  white-space: nowrap;
 `;

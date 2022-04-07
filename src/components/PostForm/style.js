@@ -3,7 +3,7 @@ import { FormButton } from "../../styles/button";
 
 export const PostFormWrapper = styled.form`
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 24px 32px;
+  padding: 18px;
   margin: 24px 0;
   border-radius: 8px;
 `;

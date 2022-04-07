@@ -8,6 +8,7 @@ import {
   HeaderRight,
   HeaderWrapper,
   LoginButton,
+  LoginLink,
   WallAppTitle,
 } from "./style";
 
@@ -29,7 +30,7 @@ export default function Header() {
         </HeaderLeft>
         <HeaderRight>
           {isAuthed ? (
-            <LoginButton onClick={logout}>
+            <LoginButton onClick={logout} logout>
               Logout
               <svg
                 width="10"
@@ -47,7 +48,7 @@ export default function Header() {
           ) : (
             <>
               <Link to="/login">
-                <span>Log in</span>
+                <LoginLink>Log in</LoginLink>
               </Link>
               <Link to="/register">
                 <LoginButton>Sign Up</LoginButton>

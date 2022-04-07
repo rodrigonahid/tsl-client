@@ -44,7 +44,7 @@ export default function Wall() {
               createdAt={formatData(item.created_at)}
             />
           ))}
-        {data.length === 0 && (
+        {!isLoading && data.length === 0 && (
           <NoPost>
             <h2>There's no post yet, be the first one to publish</h2>
           </NoPost>

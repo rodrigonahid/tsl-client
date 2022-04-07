@@ -3,7 +3,8 @@ import { Container } from "../../styles/global";
 
 export const FormContainer = styled(Container)`
   max-width: 600px;
-  padding: 10vh 0;
+  padding: 8vh 0;
+  margin: 0 10px;
 `;
 
 export const FormWrapper = styled.div`
@@ -17,6 +18,12 @@ export const FormWrapper = styled.div`
   ${({ theme }) => theme.animation.pop}
   h1 {
     margin-bottom: 36px;
+    @media screen and (max-width: 900px) {
+      font-size: 24px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    padding: 24px 18px;
   }
 `;
 

@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
   margin: 18px 0;
-  padding: 24px 32px;
+  padding: 18px;
 `;
 
 export const CardTop = styled.div``;
