@@ -1,6 +1,6 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
-import { useContext } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { api } from "../../services/axios";
 

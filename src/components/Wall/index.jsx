@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react/cjs/react.development";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { api } from "../../services/axios";
 import { Container, ErrorMessage } from "../../styles/global";

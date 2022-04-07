@@ -76,7 +76,7 @@ export default function Register() {
             type="password"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <FormButton children="Entrar" onClick={handleRegister}>
+          <FormButton onClick={handleRegister}>
             Register
             {isLoading && (
               <LoadingWrapper>
