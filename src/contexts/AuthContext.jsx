@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
