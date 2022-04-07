@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import UserCreated from "./components/UserCreated";
+import VerifyAccount from "./components/VerifyAccount";
 import Wall from "./components/Wall";
 import { AuthProvider } from "./contexts/AuthContext";
 import { GlobalStyle } from "./styles/global";
@@ -28,6 +29,7 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/" element={<Wall />} />
+            <Route path="/verify-account" element={<VerifyAccount />} />
             {!isAuthed && (
               <>
                 <Route path="/login" element={<Login />} />

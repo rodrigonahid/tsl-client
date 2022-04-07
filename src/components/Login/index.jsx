@@ -27,7 +27,7 @@ export default function Login() {
       .then((res) => {
         localStorage.setItem("Authorization", res.data.access);
         setIsAuthed(true);
-        navigate("/");
+        navigate("/", { replace: true });
       })
       .catch(() => setError("Invalid user and/or password"));
   };

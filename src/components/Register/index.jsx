@@ -31,7 +31,7 @@ export default function Register() {
     }
     try {
       await api.post("/users/", { username, email, password });
-      await navigate("success");
+      await navigate("success", { replace: true });
     } catch (err) {
       return setError("Usuário e/ou senha inválidos");
     }
