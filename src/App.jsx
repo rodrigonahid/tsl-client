@@ -4,6 +4,7 @@ import { useEffect } from "react/cjs/react.development";
 
 import Header from "./components/Header";
 import Login from "./components/Login";
+import NotFound from "./components/NotFound";
 import Register from "./components/Register";
 import UserCreated from "./components/UserCreated";
 import VerifyAccount from "./components/VerifyAccount";
@@ -28,6 +29,7 @@ function App() {
         <Router>
           <Header />
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route exact path="/" element={<Wall />} />
             <Route path="/verify-account" element={<VerifyAccount />} />
             {!isAuthed && (

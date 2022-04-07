@@ -20,7 +20,7 @@ export default function Wall() {
       setData(data);
       setIsLoading(false);
     } catch (err) {
-      setIsError(err.message);
+      setIsError("Your token has expired, please log in again");
     }
   }, []);
 

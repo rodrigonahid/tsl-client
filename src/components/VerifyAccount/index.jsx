@@ -32,7 +32,7 @@ export default function VerifyAccount() {
       }, 3000);
     } catch (err) {
       console.log(err);
-      setError("Invalid token");
+      setError("Invalid token, please log in again");
       setIsLoading(false);
     }
   }, []);

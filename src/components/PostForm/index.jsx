@@ -30,7 +30,7 @@ export default function PostForm({ setData, data }) {
       setContent("");
     } catch (err) {
       console.log(err);
-      setError("Authorization error");
+      setError("Your token has expired, please log in again");
       setIsLoading(false);
     }
   };
