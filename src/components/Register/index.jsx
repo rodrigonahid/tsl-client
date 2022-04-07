@@ -63,7 +63,7 @@ export default function Register() {
           />
           <StyledInput
             label="Email"
-            type="text"
+            type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
           <StyledInput
@@ -87,7 +87,7 @@ export default function Register() {
           {error && <ErrorMessage>{error}</ErrorMessage>}
           <Already>
             <span>Already has an account?</span>
-            <Link to="/register">Log in</Link>
+            <Link to="/login">Log in</Link>
           </Already>
         </LoginForm>
       </LoginWrapper>

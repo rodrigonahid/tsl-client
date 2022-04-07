@@ -20,7 +20,7 @@ export default function Login() {
     setError("");
     e.preventDefault();
     if (!email || !password) {
-      return setError("Preencha o formulário");
+      return setError("Fill the form");
     }
     api
       .post("/users/token/", { email, password })
@@ -40,7 +40,7 @@ export default function Login() {
           <StyledInput
             onChange={(e) => setEmail(e.target.value)}
             label="Email"
-            type="text"
+            type="email"
           />
           <StyledInput
             onChange={(e) => setPassword(e.target.value)}
