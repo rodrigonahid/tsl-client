@@ -10,7 +10,7 @@ import { FormContainer, FormWrapper, LoginForm, Already } from "./style";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { isAuthed, setIsAuthed } = useContext(AuthContext);
+  const { setIsAuthed } = useContext(AuthContext);
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
