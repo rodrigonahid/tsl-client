@@ -7,6 +7,9 @@ This project is online on Heroku: https://wall-app-tsl.herokuapp.com/
 ## Clone the project
 
 `git clone https://github.com/rodrigonahid/tsl-client.git`
+
+then
+
 `cd tsl-client`
 
 ## Installation
